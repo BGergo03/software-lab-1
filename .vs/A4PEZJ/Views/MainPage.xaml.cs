@@ -2,6 +2,7 @@
 using A4PEZJ.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -25,7 +26,7 @@ namespace A4PEZJ
     public sealed partial class MainPage : Page
     {
 
-        public List<TodoItem> Todos { get; set; } = new List<TodoItem>()
+        public static ObservableCollection<TodoItem> Todos { get; set; } = new ObservableCollection<TodoItem>()
         {
             new TodoItem()
         {
@@ -50,7 +51,7 @@ namespace A4PEZJ
         public MainPage()
         {
             this.InitializeComponent();
-
+            NavigationCacheMode = NavigationCacheMode.Required;
             DataContext = this;
         }
 

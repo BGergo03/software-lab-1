@@ -25,6 +25,7 @@
                 <TextBlock Text="Teendők" Style="{ThemeResource TitleTextBlockStyle}" Margin="12,0,0,0"/>
             </CommandBar.Content>
         </CommandBar>
+        
         <ListView Grid.Row="1" ItemsSource="{Binding Todos}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -34,6 +35,7 @@
                             <SymbolIcon HorizontalAlignment="Right" Symbol="Accept"  
                     Visibility="{Binding IsDone, Converter={StaticResource BoolToVisibilityConverter}}"/>
                         </Grid>
+                        <TextBlock Text="{Binding Priority}"/>
                         <TextBlock Text="{Binding Deadline}"/>
                     </StackPanel>
                 </DataTemplate>

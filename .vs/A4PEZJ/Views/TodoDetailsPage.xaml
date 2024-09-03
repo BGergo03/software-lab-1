@@ -9,10 +9,30 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <CommandBar DefaultLabelPosition="Right" VerticalContentAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <CommandBar Grid.Row="0" DefaultLabelPosition="Right" VerticalContentAlignment="Center">
+            <AppBarButton Icon="Add" Label="Mentés" Click="SaveButton_Click"/>
             <CommandBar.Content>
                 <TextBlock Text="Részletek" Style="{ThemeResource TitleTextBlockStyle}" Margin="12,0,0,0"/>
             </CommandBar.Content>
         </CommandBar>
+
+        <StackPanel Grid.Row="1" Margin="12">
+            <TextBlock Text="Cím"/>
+            <TextBox Text="{Binding Todo.Title, Mode=TwoWay }" Margin="0,0,0,12"/>
+            <TextBlock Text="Leírás"/>
+            <TextBox Text="{Binding Todo.Description, Mode=TwoWay }" Margin="0,0,0,12"/>
+            <TextBlock Text="Prioritás"/>
+            <ComboBox x:Name="PriorityComboBox"
+            ItemsSource="{Binding Priorities}"
+            SelectedItem="{Binding Todo.Priority, Mode=TwoWay}" />
+            <TextBlock Text="Határidő"/>
+            <DatePicker Date="{Binding Todo.Deadline, Mode=TwoWay }" Margin="0,0,0,12"/>
+            <CheckBox Content="Elkészült" IsChecked="{Binding Todo.IsDone, Mode=TwoWay }" Margin="0,0,0,12"/>
+        </StackPanel>
     </Grid>
 </Page>
