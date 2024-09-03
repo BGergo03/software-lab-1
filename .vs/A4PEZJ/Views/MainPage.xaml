@@ -26,7 +26,10 @@
             </CommandBar.Content>
         </CommandBar>
         
-        <ListView Grid.Row="1" ItemsSource="{Binding Todos}">
+        <ListView 
+            Grid.Row="1" 
+            ItemsSource="{Binding Todos}"
+            SelectionChanged="TodoListView_ItemClick">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

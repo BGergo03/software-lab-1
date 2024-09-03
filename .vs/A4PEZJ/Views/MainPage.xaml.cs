@@ -59,5 +59,17 @@ namespace A4PEZJ
         {
             Frame.Navigate(typeof(TodoDetailsPage), null);
         }
+
+        private void TodoListView_ItemClick(object sender, RoutedEventArgs e)
+        {
+            var listView = sender as ListView;
+
+            var selectedItem = listView?.SelectedItem as TodoItem;
+
+            if (selectedItem != null)
+            {
+                Frame.Navigate(typeof(TodoDetailsPage), selectedItem);
+            }
+        }
     }
 }

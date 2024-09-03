@@ -20,13 +20,16 @@
         </Grid.RowDefinitions>
 
         <CommandBar Grid.Row="0">
-            <AppBarButton x:ConnectionId='3' Icon="Add" Label="Hozzáadás"                        />
+            <AppBarButton x:ConnectionId='4' Icon="Add" Label="Hozzáadás"                        />
             <CommandBar.Content>
                 <TextBlock Text="Teendők" Style="{ThemeResource TitleTextBlockStyle}" Margin="12,0,0,0"/>
             </CommandBar.Content>
         </CommandBar>
         
-        <ListView Grid.Row="1" ItemsSource="{Binding Todos}">
+        <ListView x:ConnectionId='2' 
+            Grid.Row="1" 
+            ItemsSource="{Binding Todos}"
+                                                     >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

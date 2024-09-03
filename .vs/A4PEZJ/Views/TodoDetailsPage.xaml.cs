@@ -49,5 +49,20 @@ namespace A4PEZJ.Views
             MainPage.Todos.Add(Todo);
             Frame.Navigate(typeof(MainPage), null);
         }
+
+
+        override protected void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            if (e.Parameter is TodoItem todoItem)
+            {
+                Todo.Title = todoItem.Title;
+                Todo.Description = todoItem.Description;
+                Todo.Priority = todoItem.Priority;
+                Todo.IsDone = todoItem.IsDone;
+                Todo.Deadline = todoItem.Deadline;
+            }
+        }
     }
 }
