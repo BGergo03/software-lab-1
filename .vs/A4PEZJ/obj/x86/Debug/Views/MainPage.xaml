@@ -19,7 +19,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <CommandBar Grid.Row="0" DefaultLabelPosition="Right" VerticalContentAlignment="Center">
+        <CommandBar Grid.Row="0">
             <AppBarButton x:ConnectionId='3' Icon="Add" Label="Hozzáadás"                        />
             <CommandBar.Content>
                 <TextBlock Text="Teendők" Style="{ThemeResource TitleTextBlockStyle}" Margin="12,0,0,0"/>
@@ -35,7 +35,6 @@
                             <SymbolIcon HorizontalAlignment="Right" Symbol="Accept"  
                     Visibility="{Binding IsDone, Converter={StaticResource BoolToVisibilityConverter}}"/>
                         </Grid>
-                        <TextBlock Text="{Binding Priority}"/>
                         <TextBlock Text="{Binding Deadline}"/>
                     </StackPanel>
                 </DataTemplate>

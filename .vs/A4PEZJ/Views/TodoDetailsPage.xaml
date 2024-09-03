@@ -14,7 +14,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <CommandBar Grid.Row="0" DefaultLabelPosition="Right" VerticalContentAlignment="Center">
+        <CommandBar Grid.Row="0">
             <AppBarButton Icon="Add" Label="Mentés" Click="SaveButton_Click"/>
             <CommandBar.Content>
                 <TextBlock Text="Részletek" Style="{ThemeResource TitleTextBlockStyle}" Margin="12,0,0,0"/>
